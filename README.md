@@ -1,4 +1,4 @@
-KUDO KANCIL
+Dev KUDO KANCIL
 ## Running locally
 
 Simply run:
