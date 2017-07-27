@@ -10,4 +10,9 @@ class AboutUsController extends BaseController
     {
       return view('welcome');
     }
+
+    public function readme()
+    {
+      return view('readme');
+    }
 }
