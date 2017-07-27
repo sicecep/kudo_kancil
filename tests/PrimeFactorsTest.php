@@ -7,9 +7,14 @@ class PrimeFactorsTest extends TestCase
      *
      * @return void
      */
-    public function testHome()
+    public function test16()
     {
-        $this->visit('/')
-             ->see('Hello Yose');
+        $inputNumber = 16;
+
+        $this->visit('/primeFactors?number='.$inputNumber)
+              ->seeJson([
+                 'number' => $inputNumber,
+                 'decomposition' => [2,2,2,2],
+              ]);
     }
 }
