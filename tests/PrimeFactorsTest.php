@@ -50,4 +50,15 @@ class PrimeFactorsTest extends TestCase
                  'decomposition' => [],
               ]);
     }
+
+    public function test1024()
+    {
+        $inputNumber = 1024;
+
+        $this->visit('/primeFactors?number='.$inputNumber)
+              ->seeJson([
+                 'number' => $inputNumber,
+                 'decomposition' => [2,2,2,2,2,2,2,2,2,2],
+              ]);
+    }
 }
