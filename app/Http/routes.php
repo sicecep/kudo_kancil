@@ -14,3 +14,5 @@
 $app->get('/', "HomeController@welcome");
 
 $app->get('/ping', "PingController@ping");
+
+$app->get('/about-us', "AboutUsController@aboutus");
