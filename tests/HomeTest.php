@@ -21,9 +21,7 @@ class HomeTest extends TestCase
     public function testShare()
     {
         $this->visit('/')
-             ->see('repository-link')
-             ->click('repository-link')
-             ->seePageIs('/readme')
-             ->see('YoseTheGame');
+            ->see('<a id="repository-link" href="https://github.com/sicecep/kudo_kancil#readme">repository-link</a>');
     }
-}
+
+  }
