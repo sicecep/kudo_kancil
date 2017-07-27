@@ -10,8 +10,12 @@ class PrimeFactorsController extends BaseController
     public function getPrimeFactors(Request $request)
     {
     	$result = array();
-    	$number = $request->input('number');
-    	$result['number'] = (int)$number;
+    	$number = (int)$request->input('number');
+
+    	if(!is_int($number))
+    		return response()->json($result);	
+
+    	$result['number'] = $number;
     	$decomposition=array();
     	while((($number%2) == 0) && $number > 1){
     		$number /= 2;

@@ -39,4 +39,15 @@ class PrimeFactorsTest extends TestCase
                  'decomposition' => [],
               ]);
     }
+
+    public function testIsInt()
+    {
+        $inputNumber = 'a';
+
+        $this->visit('/primeFactors?number='.$inputNumber)
+              ->seeJson([
+                 'number' => 0,
+                 'decomposition' => [],
+              ]);
+    }
 }
