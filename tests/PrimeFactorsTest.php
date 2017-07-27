@@ -17,4 +17,26 @@ class PrimeFactorsTest extends TestCase
                  'decomposition' => [2,2,2,2],
               ]);
     }
+
+    public function test7()
+    {
+        $inputNumber = 7;
+
+        $this->visit('/primeFactors?number='.$inputNumber)
+              ->seeJson([
+                 'number' => $inputNumber,
+                 'decomposition' => [],
+              ]);
+    }
+
+    public function test0()
+    {
+        $inputNumber = 0;
+
+        $this->visit('/primeFactors?number='.$inputNumber)
+              ->seeJson([
+                 'number' => $inputNumber,
+                 'decomposition' => [],
+              ]);
+    }
 }

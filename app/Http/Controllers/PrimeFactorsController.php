@@ -11,12 +11,12 @@ class PrimeFactorsController extends BaseController
     {
     	$result = array();
     	$number = $request->input('number');
-    	$result['number'] = $number;
+    	$result['number'] = (int)$number;
     	$decomposition=array();
-    	while($number > 1){
-    		$number = $number/2;
+    	while((($number%2) == 0) && $number > 1){
+    		$number /= 2;
     		array_push($decomposition,2);
-    	}
+    	}                                                                                      
     	$result['decomposition'] = $decomposition;
     	return response()->json($result);
     }
