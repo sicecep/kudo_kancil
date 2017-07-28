@@ -15,4 +15,9 @@ class AboutUsController extends BaseController
     {
       return view('readme');
     }
+
+    public function minesweeper()
+    {
+      return view('minesweeper');
+    }
 }
