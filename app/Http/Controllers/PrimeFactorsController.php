@@ -19,13 +19,20 @@ class PrimeFactorsController extends BaseController
             return response()->json($result);
         }  
 
+        if($number > 1000000){
+            $result['number'] = (int)$number;
+            $result['error'] = 'too big number (>1e6)';
+            return response()->json($result);
+        }
 
         $decomposition=array();
-        $result['number'] = (int)$number;
-        while((($number%2) == 0) && $number > 1){
-           $number /= 2;
-           array_push($decomposition,2);
-        }                                                                                      
+        $result['number'] = (int)$number;   
+        
+        for($candidate = 2; $number > 1; $candidate++){
+            for(; $number % $candidate == 0; $number /= $candidate){
+                $decomposition[] = $candidate;
+            }
+        }                                                                               
         $result['decomposition'] = $decomposition;
         return response()->json($result);
     }
