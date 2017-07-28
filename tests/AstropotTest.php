@@ -13,4 +13,21 @@ class AstropotTest extends TestCase
         ->see('astroport-name');
     }
 
+    public function testGate(){
+        $this->visit('/astroport')
+        ->see('gate-1')
+        ->see('gate-2')
+        ->see('gate-3')
+        ->see('first gate')
+        ->see('second gate')
+        ->see('third gate');
+    }
+
+    public function testShip(){
+        $this->visit('/astroport')
+        ->see('gate-1')
+        ->see('gate-2')
+        ->see('gate-3');
+    }
+
 }
