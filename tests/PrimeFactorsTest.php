@@ -31,6 +31,18 @@ class PrimeFactorsTest extends TestCase
               ]);
     }
 
+    public function testString()
+    {
+          $nbr = "hello";
+          $error = "not a number";
+
+          $this->get('/primeFactors?number='.$nbr)
+               ->seeJson([
+                   'number' => $nbr,
+                   'error' => $error
+                ]);
+    }
+
     // public function test9()
     // {
     //     $nbr = 9;
@@ -38,7 +50,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
@@ -50,7 +62,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
@@ -62,7 +74,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
@@ -74,7 +86,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
@@ -86,7 +98,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
@@ -98,7 +110,7 @@ class PrimeFactorsTest extends TestCase
     //
     //     $this->get('/primeFactors?number='.$nbr)
     //          ->seeJson([
-    //              'number' => strval($nbr),
+    //              'number' => $nbr,
     //              'decomposition' => $factor
     //           ]);
     // }
