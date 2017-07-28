@@ -20,7 +20,7 @@ class PrimeFactorsController extends BaseController
         }  
 
         if($number > 1000000){
-            $result['number'] = $number;
+            $result['number'] = (int)$number;
             $result['error'] = 'too big number (>1e6)';
             return response()->json($result);
         }
