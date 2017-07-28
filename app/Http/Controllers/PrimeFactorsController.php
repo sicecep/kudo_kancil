@@ -22,10 +22,16 @@ class PrimeFactorsController extends BaseController
 
         $decomposition=array();
         $result['number'] = (int)$number;
-        while((($number%2) == 0) && $number > 1){
-           $number /= 2;
-           array_push($decomposition,2);
-        }                                                                                      
+        // while((($number%2) == 0) && $number > 1){
+        //    $number /= 2;
+        //    array_push($decomposition,2);
+        // }       
+        
+        for($candidate = 2; $number > 1; $candidate++){
+            for(; $number % $candidate == 0; $number /= $candidate){
+                $decomposition[] = $candidate;
+            }
+        }                                                                               
         $result['decomposition'] = $decomposition;
         return response()->json($result);
     }
