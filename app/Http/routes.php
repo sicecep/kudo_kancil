@@ -22,3 +22,5 @@ $app->get('/about-us', "AboutUsController@aboutus");
 $app->get('/readme', "AboutUsController@readme");
 
 $app->get('/astroport', "AboutUsController@readme");
+
+$app->get('/minesweeper', "AboutUsController@minesweeper");
