@@ -30,4 +30,15 @@ class AstropotTest extends TestCase
         ->see('gate-3');
     }
 
+    public function testDocker()
+    {
+        $shipName = 'Millenium Falcon';
+
+         $this->visit('/astroport')
+          ->type($shipName, 'ship')
+          ->press('dock')
+          ->see('ship-1')
+          ->see($shipName);
+    }
+
 }
