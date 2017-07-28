@@ -151,4 +151,32 @@ class PrimeFactorsTest extends TestCase
             ]);
     }
 
+    public function testMutipleEntries()
+    {
+      $nbr1 = 300;
+      $nbr2= 120;
+      $nbr3 = "hello";
+
+      $factor1 = [2,2,3,5,5];
+      $factor2 = [2,2,3,5];
+
+      $errorBigNumber = "too big number (>1e6)";
+      $errorNotANumber = "not a number";
+
+      $this->get('/primeFactors?number='.$nbr1.'&number='.$nbr2.'&number='.$nbr3)
+           ->seeJson(
+             [
+               'number' => $nbr1,
+               'decomposition' => $factor1
+             ],
+             [
+               'number' => $nbr2,
+               'decomposition' => $factor2
+             ],
+             [
+               'number' => $nbr3,
+               'error' => $errorNotANumber
+             ]
+        );
+    }
 }
