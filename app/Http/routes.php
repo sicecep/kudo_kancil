@@ -18,3 +18,5 @@ $app->get('/ping', "PingController@ping");
 $app->get('/about-us', "AboutUsController@aboutus");
 
 $app->get('/readme', "AboutUsController@readme");
+
+$app->get('/astroport', "AboutUsController@readme");
